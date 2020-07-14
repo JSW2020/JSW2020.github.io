@@ -79,14 +79,10 @@
 
 
 
-<meta name="description" content="CTF–CryptoRSA学习心得标签（空格分隔）： RSA  1234567891011121314151617from Crypto.Util.number import *import gmpy2#p+q&#x3D;2**1024-65538n&#x3D;777203234744913582337822033227544099354031126844833399910495593247856">
-<meta property="og:type" content="article">
-<meta property="og:title" content="RSA">
-<meta property="og:url" content="http://yoursite.com/2020/05/24/RSA/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JSWの博客">
+<meta property="og:url" content="http://yoursite.com/archives/2020/07/index.html">
 <meta property="og:site_name" content="JSWの博客">
-<meta property="og:description" content="CTF–CryptoRSA学习心得标签（空格分隔）： RSA  1234567891011121314151617from Crypto.Util.number import *import gmpy2#p+q&#x3D;2**1024-65538n&#x3D;777203234744913582337822033227544099354031126844833399910495593247856">
-<meta property="article:published_time" content="2020-05-24T09:16:05.539Z">
-<meta property="article:modified_time" content="2020-05-24T09:16:28.804Z">
 <meta property="article:author" content="JSW">
 <meta name="twitter:card" content="summary">
 
@@ -118,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/24/RSA/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/2020/07/"/>
 
 
 
 
 
-  <title>RSA | JSWの博客</title>
+  <title>归档 | JSWの博客</title>
   
 
 
@@ -143,7 +139,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,144 +213,74 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 2 篇日志。 继续努力。
+      </span>
 
-  
-  
-  
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2020">2020</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/24/RSA/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JSW">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JSWの博客">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">RSA</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2020/07/14/CTF--CryptoRSA%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">CTF--CryptoRSA学习心得</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-24T17:16:05+08:00">
-                2020-05-24
-              </time>
-            
+            </a>
+        
+      </h2>
 
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2020-07-14T20:37:47+08:00"
+              content="2020-07-14" >
+          07-14
+        </time>
+      </div>
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="CTF–CryptoRSA学习心得"><a href="#CTF–CryptoRSA学习心得" class="headerlink" title="CTF–CryptoRSA学习心得"></a>CTF–CryptoRSA学习心得</h1><p>标签（空格分隔）： RSA</p>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">import gmpy2</span><br><span class="line">#p+q&#x3D;2**1024-65538</span><br><span class="line">n&#x3D;7772032347449135823378220332275440993540311268448333999104955932478564127911903406653058819764738253486720397879672764388694000771405819957057863950453851364451924517697547937666368408217911472655460552229194417053614032700684618244535892388408163789233729235322427060659037127722296126914934811062890693445333579231298411670177246830067908917781430587062195304269374876255855264856219488896495236456732142288991759222315207358866038667591630902141900715954462530027896528684147458995266239039054895859149945968620353933341415087063996651037681752709224486183823035542105003329794626718013206267196812545606103321821</span><br><span class="line">c&#x3D;2082303370386500999739407038433364384531268495285382462393864784029350314174833975697290115374382446746560936195242108283558410023998631974392437760920681553607338859157019178565294055755787756920003102506579335103169629546410439497570201554568266074421781047420687173530441469299976286281709526307661219925667082812294328343298836241624597491473793807687939912877432920934022304415340311930199467500833755390490763679081685821950332292303679223444816832000945972744492944044912168217765156110058474974887372388032286968936052010531850687361328326741707441938740295431353926037925950161386891437897990887861853097318</span><br><span class="line">e&#x3D;65537</span><br><span class="line">p&#x3D;107412325452291468353067653887023798123555681014149695007988108017352983919106742444636366959848122510718041124968495133155443915536044076418984388182044433014456411947595840123976437599315702250407343581123649598689543618730325019990273144652595572758995427067321783042271614826842736317563717605507947980729</span><br><span class="line">#$sage:</span><br><span class="line">#p,q&#x3D;var(&quot;p q&quot;)</span><br><span class="line">#solve([p*q&#x3D;&#x3D;n,p+q&#x3D;&#x3D;t],p,q)</span><br><span class="line"></span><br><span class="line">q&#x3D;n&#x2F;&#x2F;p</span><br><span class="line">phi&#x3D;(p-1)*(q-1)</span><br><span class="line">d&#x3D;gmpy2.invert(e,phi)</span><br><span class="line">m&#x3D;pow(c,d,n)</span><br><span class="line">flag&#x3D;long_to_bytes(m)</span><br><span class="line">print flag</span><br></pre></td></tr></table></figure>
-<p>脚本</p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/05/12/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
+
     </div>
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -362,10 +288,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -386,17 +308,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -438,22 +351,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CTF–CryptoRSA学习心得"><span class="nav-number">1.</span> <span class="nav-text">CTF–CryptoRSA学习心得</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -594,10 +491,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

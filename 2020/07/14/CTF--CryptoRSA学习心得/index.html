@@ -79,10 +79,14 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="JSWの博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="CTF–CryptoRSA学习心得标签（空格分隔）： RSA Crypto  已知n,c,e,p+q可求p，q，再解d,m脚本如下 1234567891011121314151617from Crypto.Util.number import *import gmpy2#p+q&#x3D;2**1024-65538n&#x3D;777203234744913582337822033227544099354031126">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CTF--CryptoRSA学习心得">
+<meta property="og:url" content="http://yoursite.com/2020/07/14/CTF--CryptoRSA%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/index.html">
 <meta property="og:site_name" content="JSWの博客">
+<meta property="og:description" content="CTF–CryptoRSA学习心得标签（空格分隔）： RSA Crypto  已知n,c,e,p+q可求p，q，再解d,m脚本如下 1234567891011121314151617from Crypto.Util.number import *import gmpy2#p+q&#x3D;2**1024-65538n&#x3D;777203234744913582337822033227544099354031126">
+<meta property="article:published_time" content="2020-07-14T12:37:47.644Z">
+<meta property="article:modified_time" content="2020-07-14T12:38:25.804Z">
 <meta property="article:author" content="JSW">
 <meta name="twitter:card" content="summary">
 
@@ -114,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/14/CTF--CryptoRSA学习心得/"/>
 
 
 
 
 
-  <title>JSWの博客</title>
+  <title>CTF--CryptoRSA学习心得 | JSWの博客</title>
   
 
 
@@ -139,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,9 +216,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -245,9 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/14/CTF--CryptoRSA%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" itemprop="url">CTF--CryptoRSA学习心得</a></h1>
+          <h1 class="post-title" itemprop="name headline">CTF--CryptoRSA学习心得</h1>
         
 
         <div class="post-meta">
@@ -297,16 +298,12 @@
       
 
       
-        
-          
-            <h1 id="CTF–CryptoRSA学习心得"><a href="#CTF–CryptoRSA学习心得" class="headerlink" title="CTF–CryptoRSA学习心得"></a>CTF–CryptoRSA学习心得</h1><p>标签（空格分隔）： RSA Crypto</p>
+        <h1 id="CTF–CryptoRSA学习心得"><a href="#CTF–CryptoRSA学习心得" class="headerlink" title="CTF–CryptoRSA学习心得"></a>CTF–CryptoRSA学习心得</h1><p>标签（空格分隔）： RSA Crypto</p>
 <hr>
 <p>已知n,c,e,p+q<br>可求p，q，再解d,m<br>脚本如下</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number import *</span><br><span class="line">import gmpy2</span><br><span class="line"><span class="comment">#p+q=2**1024-65538</span></span><br><span class="line"><span class="attribute">n</span>=7772032347449135823378220332275440993540311268448333999104955932478564127911903406653058819764738253486720397879672764388694000771405819957057863950453851364451924517697547937666368408217911472655460552229194417053614032700684618244535892388408163789233729235322427060659037127722296126914934811062890693445333579231298411670177246830067908917781430587062195304269374876255855264856219488896495236456732142288991759222315207358866038667591630902141900715954462530027896528684147458995266239039054895859149945968620353933341415087063996651037681752709224486183823035542105003329794626718013206267196812545606103321821</span><br><span class="line"><span class="attribute">c</span>=2082303370386500999739407038433364384531268495285382462393864784029350314174833975697290115374382446746560936195242108283558410023998631974392437760920681553607338859157019178565294055755787756920003102506579335103169629546410439497570201554568266074421781047420687173530441469299976286281709526307661219925667082812294328343298836241624597491473793807687939912877432920934022304415340311930199467500833755390490763679081685821950332292303679223444816832000945972744492944044912168217765156110058474974887372388032286968936052010531850687361328326741707441938740295431353926037925950161386891437897990887861853097318</span><br><span class="line"><span class="attribute">e</span>=65537</span><br><span class="line"><span class="attribute">p</span>=107412325452291468353067653887023798123555681014149695007988108017352983919106742444636366959848122510718041124968495133155443915536044076418984388182044433014456411947595840123976437599315702250407343581123649598689543618730325019990273144652595572758995427067321783042271614826842736317563717605507947980729</span><br><span class="line"><span class="comment">#$sage:</span></span><br><span class="line"><span class="comment">#p,q=var("p q")</span></span><br><span class="line"><span class="comment">#solve([p*q==n,p+q==t],p,q)</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">q</span>=n//p</span><br><span class="line">phi=(p-1)*(q-1)</span><br><span class="line"><span class="attribute">d</span>=gmpy2.invert(e,phi)</span><br><span class="line"><span class="attribute">m</span>=pow(c,d,n)</span><br><span class="line"><span class="attribute">flag</span>=long_to_bytes(m)</span><br><span class="line"><span class="builtin-name">print</span> flag</span><br></pre></td></tr></table></figure>
 
 
-          
-        
       
     </div>
     
@@ -323,144 +320,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JSW">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JSWの博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/12/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T23:49:14+08:00">
-                2020-05-12
-              </time>
+              <a href="/2020/05/12/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -470,10 +351,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -481,6 +363,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -501,8 +387,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -544,6 +439,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CTF–CryptoRSA学习心得"><span class="nav-number">1.</span> <span class="nav-text">CTF–CryptoRSA学习心得</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -684,6 +595,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
