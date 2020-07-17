@@ -321,7 +321,6 @@
           
             <h1 id="XCTF-Exercise-area-wp"><a href="#XCTF-Exercise-area-wp" class="headerlink" title="XCTF-Exercise area wp"></a>XCTF-Exercise area wp</h1><p>假期学习下CTF，先做做练习题，然后写写简单的WP<br>标签： CTF Misc Web</p>
 <hr>
-<p>[TOC]</p>
 <h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="0X01-this-is-flag"><a href="#0X01-this-is-flag" class="headerlink" title="- 0X01 this_is_flag"></a>- 0X01 this_is_flag</h3><p><strong>真·入门</strong><br>直接复制题目内容的flag交了就行，熟悉下提交的方法…<br><strong>flag{th1s_!s_a_d4m0_4la9}</strong></p>
 <h3 id="0X02-PDF"><a href="#0X02-PDF" class="headerlink" title="- 0X02 PDF"></a>- 0X02 PDF</h3><p><a href="https://adworld.xctf.org.cn/media/task/attachments/ad00be3652ac4301a71dedd2708f78b8.pdf" target="_blank" rel="noopener">文件下载</a><br>1.在pdf页面直接选择，就会找到一段看不见的可选择文字,即flag<br>2.使用在线工具转换为word，再移开图片即可看到<br> <strong>flag{security_through_obscurity}</strong></p>
 <h3 id="0x03-掀桌子"><a href="#0x03-掀桌子" class="headerlink" title="- 0x03 掀桌子"></a>- 0x03 掀桌子</h3><p> 题目给了一段字符串，通过学习与猜测，是和16进制有关+转换字符串;<br>每两个字符一组转换为10进制，再到ASCII码，但发现范围是128-255，所以进行对128取模后再转换。<br><strong>flag{hjzcydjzbjdcjkzkcugisdchjyjsbdfr}</strong><br>下面是python脚本：</p>
@@ -331,6 +330,161 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">s=<span class="string">'MzkuM3gvMUAwnzuvn3cgozMlMTuvqzAenJchMUAeqzWenzEmLJW9'</span></span><br><span class="line">l=len(s)</span><br><span class="line">flag=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'A'</span>&lt;=s[i]&lt;=<span class="string">'M'</span>o<span class="string">r'a'</span>&lt;=s[i]&lt;=<span class="string">'m'</span>:</span><br><span class="line">        flag+=chr(ord(s[i])+<span class="number">13</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">'M'</span>&lt;=s[i]&lt;=<span class="string">'Z'</span>o<span class="string">r'm'</span>&lt;=s[i]&lt;=<span class="string">'z'</span>:</span><br><span class="line">        flag+=chr(ord(s[i])<span class="number">-13</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag+=s[i]</span><br><span class="line"><span class="comment">#s1='dc4ea35493625583b6e10a5c89b27092'</span></span><br><span class="line">print(base64.b64decode(flag))</span><br></pre></td></tr></table></figure>
 <p><a href="https://www.cnblogs.com/zqy-blogs/p/12219155.html" target="_blank" rel="noopener">参考链接</a></p>
 <h3 id="0x05-give-you-flag"><a href="#0x05-give-you-flag" class="headerlink" title="- 0x05 give_you_flag"></a>- 0x05 give_you_flag</h3><h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><blockquote>
+<p>待更新ing</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/XCTF-Exercise%20area/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JSW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JSWの博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/17/XCTF-Exercise%20area/" itemprop="url">XCTF-Exercise area</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-17T12:00:00+08:00">
+                2020-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF/" itemprop="url" rel="index">
+                    <span itemprop="name">CTF</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>假期学习下CTF，先做做练习题，然后写写简单的WP</p>
+<hr>
+<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="0X01-this-is-flag"><a href="#0X01-this-is-flag" class="headerlink" title="- 0X01 this_is_flag"></a>- 0X01 this_is_flag</h3><p><strong>真·入门</strong><br>直接复制题目内容的flag交了就行，熟悉下提交的方法…<br><strong>flag{th1s_!s_a_d4m0_4la9}</strong></p>
+<h3 id="0X02-PDF"><a href="#0X02-PDF" class="headerlink" title="- 0X02 PDF"></a>- 0X02 PDF</h3><p><a href="https://adworld.xctf.org.cn/media/task/attachments/ad00be3652ac4301a71dedd2708f78b8.pdf" target="_blank" rel="noopener">文件下载</a><br>1.在pdf页面直接选择，就会找到一段看不见的可选择文字,即flag<br>2.使用在线工具转换为word，再移开图片即可看到<br> <strong>flag{security_through_obscurity}</strong></p>
+<h3 id="0x03-掀桌子"><a href="#0x03-掀桌子" class="headerlink" title="- 0x03 掀桌子"></a>- 0x03 掀桌子</h3><p> 题目给了一段字符串，通过学习与猜测，是和16进制有关+转换字符串;<br>每两个字符一组转换为10进制，再到ASCII码，但发现范围是128-255，所以进行对128取模后再转换。<br><strong>flag{hjzcydjzbjdcjkzkcugisdchjyjsbdfr}</strong><br>下面是python脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="string">''</span></span><br><span class="line">s=<span class="string">'c8e9aca0c6f2e5f3e8c4efe7a1a0d4e8e5a0e6ece1e7a0e9f3baa0e8eafae3f9e4eafae2eae4e3eaebfaebe3f5e7e9f3e4e3e8eaf9eaf3e2e4e6f2'</span></span><br><span class="line">l = len(s)//<span class="number">2</span>   <span class="comment">#两个字符为一个转换字</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">    flag += chr(int(s[i*<span class="number">2</span>:(i+<span class="number">1</span>)*<span class="number">2</span>], <span class="number">16</span>) % <span class="number">128</span>)   <span class="comment">#ASCII码128-255取模</span></span><br><span class="line">print(flag)</span><br><span class="line"><span class="comment">#result：Hi, FreshDog! The flag is: hjzcydjzbjdcjkzkcugisdchjyjsbdfr</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/mastergu2/article/details/106564450?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase" target="_blank" rel="noopener">参考链接</a></p>
+<h3 id="0x04-如来十三掌"><a href="#0x04-如来十三掌" class="headerlink" title="- 0x04 如来十三掌"></a>- 0x04 如来十三掌</h3><p><a href="https://adworld.xctf.org.cn/media/task/attachments/833e81c19b2b4726986bd6a606d64f3c.docx" target="_blank" rel="noopener">附件下载</a><br>下载文件后发现是一段类似佛经的文字，猜到是一种加密方式，搜索发现是<a href="http://www.keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener">与佛论禅</a>，得到一段字符串，此时由题目提示13掌，查找了有关的加密方式rot-13。<br><strong>flag{bdscjhbkzmnfrdhbvckijndskvbkjdsab}</strong><br>python脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">s=<span class="string">'MzkuM3gvMUAwnzuvn3cgozMlMTuvqzAenJchMUAeqzWenzEmLJW9'</span></span><br><span class="line">l=len(s)</span><br><span class="line">flag=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'A'</span>&lt;=s[i]&lt;=<span class="string">'M'</span>o<span class="string">r'a'</span>&lt;=s[i]&lt;=<span class="string">'m'</span>:</span><br><span class="line">        flag+=chr(ord(s[i])+<span class="number">13</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">'M'</span>&lt;=s[i]&lt;=<span class="string">'Z'</span>o<span class="string">r'm'</span>&lt;=s[i]&lt;=<span class="string">'z'</span>:</span><br><span class="line">        flag+=chr(ord(s[i])<span class="number">-13</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag+=s[i]</span><br><span class="line"><span class="comment">#s1='dc4ea35493625583b6e10a5c89b27092'</span></span><br><span class="line">print(base64.b64decode(flag))</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.cnblogs.com/zqy-blogs/p/12219155.html" target="_blank" rel="noopener">参考链接</a></p>
+<h3 id="0x05-give-you-flag"><a href="#0x05-give-you-flag" class="headerlink" title="- 0x05 give_you_flag"></a>- 0x05 give_you_flag</h3><hr>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><blockquote>
 <p>待更新ing</p>
 </blockquote>
 
@@ -423,6 +577,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF/" itemprop="url" rel="index">
+                    <span itemprop="name">CTF</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -452,9 +628,7 @@
       
         
           
-            <h1 id="CTF–CryptoRSA学习心得"><a href="#CTF–CryptoRSA学习心得" class="headerlink" title="CTF–CryptoRSA学习心得"></a>CTF–CryptoRSA学习心得</h1><p>标签（空格分隔）： RSA Crypto</p>
-<hr>
-<p>已知n,c,e,p+q<br>可求p，q，再解d,m<br>脚本如下</p>
+            <p>已知n,c,e,p+q<br>可求p，q，再解d,m<br>脚本如下</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number import *</span><br><span class="line">import gmpy2</span><br><span class="line"><span class="comment">#p+q=2**1024-65538</span></span><br><span class="line"><span class="attribute">n</span>=7772032347449135823378220332275440993540311268448333999104955932478564127911903406653058819764738253486720397879672764388694000771405819957057863950453851364451924517697547937666368408217911472655460552229194417053614032700684618244535892388408163789233729235322427060659037127722296126914934811062890693445333579231298411670177246830067908917781430587062195304269374876255855264856219488896495236456732142288991759222315207358866038667591630902141900715954462530027896528684147458995266239039054895859149945968620353933341415087063996651037681752709224486183823035542105003329794626718013206267196812545606103321821</span><br><span class="line"><span class="attribute">c</span>=2082303370386500999739407038433364384531268495285382462393864784029350314174833975697290115374382446746560936195242108283558410023998631974392437760920681553607338859157019178565294055755787756920003102506579335103169629546410439497570201554568266074421781047420687173530441469299976286281709526307661219925667082812294328343298836241624597491473793807687939912877432920934022304415340311930199467500833755390490763679081685821950332292303679223444816832000945972744492944044912168217765156110058474974887372388032286968936052010531850687361328326741707441938740295431353926037925950161386891437897990887861853097318</span><br><span class="line"><span class="attribute">e</span>=65537</span><br><span class="line"><span class="attribute">p</span>=107412325452291468353067653887023798123555681014149695007988108017352983919106742444636366959848122510718041124968495133155443915536044076418984388182044433014456411947595840123976437599315702250407343581123649598689543618730325019990273144652595572758995427067321783042271614826842736317563717605507947980729</span><br><span class="line"><span class="comment">#$sage:</span></span><br><span class="line"><span class="comment">#p,q=var("p q")</span></span><br><span class="line"><span class="comment">#solve([p*q==n,p+q==t],p,q)</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">q</span>=n//p</span><br><span class="line">phi=(p-1)*(q-1)</span><br><span class="line"><span class="attribute">d</span>=gmpy2.invert(e,phi)</span><br><span class="line"><span class="attribute">m</span>=pow(c,d,n)</span><br><span class="line"><span class="attribute">flag</span>=long_to_bytes(m)</span><br><span class="line"><span class="builtin-name">print</span> flag</span><br></pre></td></tr></table></figure>
 
 
@@ -670,14 +844,32 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
