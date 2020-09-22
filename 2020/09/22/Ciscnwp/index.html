@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Crypto,MISC," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="写在前面：菜鸡记录下自己做出来的几道题 初赛0x01 ctf_game从文件里直接提取出flag字样即可（也可以写脚本flag{65e02f26-0d6e-463f-bc63-2df733e47fbe} 0x02 bd题目 12345678910111213141516171819202122from secret import flagfrom Crypto.Util.number import">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020 CISCN部分WP">
+<meta property="og:url" content="http://yoursite.com/2020/09/22/Ciscnwp/index.html">
+<meta property="og:site_name" content="JSWの博客">
+<meta property="og:description" content="写在前面：菜鸡记录下自己做出来的几道题 初赛0x01 ctf_game从文件里直接提取出flag字样即可（也可以写脚本flag{65e02f26-0d6e-463f-bc63-2df733e47fbe} 0x02 bd题目 12345678910111213141516171819202122from secret import flagfrom Crypto.Util.number import">
+<meta property="og:image" content="http://yoursite.com/2020/09/22/Ciscnwp/ctfgame.jpg">
+<meta property="article:published_time" content="2020-09-22T04:28:24.000Z">
+<meta property="article:modified_time" content="2020-09-22T05:40:50.654Z">
+<meta property="article:author" content="JSW">
+<meta property="article:tag" content="Crypto">
+<meta property="article:tag" content="MISC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/09/22/Ciscnwp/ctfgame.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/09/22/Ciscnwp/"/>
+
+
+
+
+
+  <title>2020 CISCN部分WP | JSWの博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JSWの博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学习ing</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/22/Ciscnwp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JSW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JSWの博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2020 CISCN部分WP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-22T12:28:24+08:00">
+                2020-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF/" itemprop="url" rel="index">
+                    <span itemprop="name">CTF</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="写在前面：菜鸡记录下自己做出来的几道题"><a href="#写在前面：菜鸡记录下自己做出来的几道题" class="headerlink" title="写在前面：菜鸡记录下自己做出来的几道题"></a>写在前面：菜鸡记录下自己做出来的几道题</h1><hr>
+<h2 id="初赛"><a href="#初赛" class="headerlink" title="初赛"></a><strong>初赛</strong></h2><h3 id="0x01-ctf-game"><a href="#0x01-ctf-game" class="headerlink" title="0x01 ctf_game"></a>0x01 ctf_game</h3><p>从文件里直接提取出flag字样即可（也可以写脚本<br><img src="/2020/09/22/Ciscnwp/ctfgame.jpg" alt="ctfgame"><br>flag{65e02f26-0d6e-463f-bc63-2df733e47fbe}</p>
+<h3 id="0x02-bd"><a href="#0x02-bd" class="headerlink" title="0x02 bd"></a>0x02 bd</h3><p>题目</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> secret <span class="keyword">import</span> flag</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">m = bytes_to_long(flag)</span><br><span class="line"></span><br><span class="line">p = getPrime(<span class="number">512</span>)</span><br><span class="line">q = getPrime(<span class="number">512</span>)</span><br><span class="line">N = p * q</span><br><span class="line">phi = (p<span class="number">-1</span>) * (q<span class="number">-1</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    d = getRandomNBitInteger(<span class="number">200</span>)</span><br><span class="line">    <span class="keyword">if</span> GCD(d, phi) == <span class="number">1</span>:</span><br><span class="line">        e = inverse(d, phi)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">c = pow(m, e, N)</span><br><span class="line"></span><br><span class="line">print(c, e, N, sep=<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 37625098109081701774571613785279343908814425141123915351527903477451570893536663171806089364574293449414561630485312247061686191366669404389142347972565020570877175992098033759403318443705791866939363061966538210758611679849037990315161035649389943256526167843576617469134413191950908582922902210791377220066</span></span><br><span class="line"><span class="comment"># 46867417013414476511855705167486515292101865210840925173161828985833867821644239088991107524584028941183216735115986313719966458608881689802377181633111389920813814350964315420422257050287517851213109465823444767895817372377616723406116946259672358254060231210263961445286931270444042869857616609048537240249</span></span><br><span class="line"><span class="comment"># 86966590627372918010571457840724456774194080910694231109811773050866217415975647358784246153710824794652840306389428729923771431340699346354646708396564203957270393882105042714920060055401541794748437242707186192941546185666953574082803056612193004258064074902605834799171191314001030749992715155125694272289</span></span><br></pre></td></tr></table></figure>
+<p>题目给出了 n,e,c 发现 e 比较大，想到rsa-wiener-attack破解 d，尝试后成功，脚本如下:</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">from <span class="module-access"><span class="module"><span class="identifier">Crypto</span>.</span><span class="module"><span class="identifier">Util</span>.</span></span>number import *</span><br><span class="line">from Crypto.PublicKey import RSA</span><br><span class="line">import ContinuedFractions, Arithmetic</span><br><span class="line">c=<span class="number">37625098109081701774571613785279343908814425141123915351527903477451570893536663171806089364574293449414561630485312247061686191366669404389142347972565020570877175992098033759403318443705791866939363061966538210758611679849037990315161035649389943256526167843576617469134413191950908582922902210791377220066</span></span><br><span class="line">e=<span class="number">46867417013414476511855705167486515292101865210840925173161828985833867821644239088991107524584028941183216735115986313719966458608881689802377181633111389920813814350964315420422257050287517851213109465823444767895817372377616723406116946259672358254060231210263961445286931270444042869857616609048537240249</span></span><br><span class="line">n=<span class="number">86966590627372918010571457840724456774194080910694231109811773050866217415975647358784246153710824794652840306389428729923771431340699346354646708396564203957270393882105042714920060055401541794748437242707186192941546185666953574082803056612193004258064074902605834799171191314001030749992715155125694272289</span></span><br><span class="line"># firstly git clone https:<span class="comment">//github.com/pablocelayes/rsa-wiener-attack.git !</span></span><br><span class="line">def wiener<span class="constructor">_hack(<span class="params">e</span>, <span class="params">n</span>)</span>:</span><br><span class="line">    frac = <span class="module-access"><span class="module"><span class="identifier">ContinuedFractions</span>.</span></span>rational<span class="constructor">_to_contfrac(<span class="params">e</span>, <span class="params">n</span>)</span></span><br><span class="line">    convergents = <span class="module-access"><span class="module"><span class="identifier">ContinuedFractions</span>.</span></span>convergents<span class="constructor">_from_contfrac(<span class="params">frac</span>)</span></span><br><span class="line">    for (k, d) <span class="keyword">in</span> convergents:</span><br><span class="line">        <span class="keyword">if</span> k != <span class="number">0</span> <span class="keyword">and</span> (e<span class="operator"> * </span>d - <span class="number">1</span>) % k<span class="operator"> == </span><span class="number">0</span>:</span><br><span class="line">            phi = (e<span class="operator"> * </span>d - <span class="number">1</span>) <span class="comment">// k</span></span><br><span class="line">            s = n - phi + <span class="number">1</span></span><br><span class="line">            discr = s<span class="operator"> * </span>s - <span class="number">4</span><span class="operator"> * </span>n</span><br><span class="line">            <span class="keyword">if</span> (discr &gt;= <span class="number">0</span>):</span><br><span class="line">                t = <span class="module-access"><span class="module"><span class="identifier">Arithmetic</span>.</span></span>is<span class="constructor">_perfect_square(<span class="params">discr</span>)</span></span><br><span class="line">                <span class="keyword">if</span> t != -<span class="number">1</span> <span class="keyword">and</span> (s + t) % <span class="number">2</span><span class="operator"> == </span><span class="number">0</span>:</span><br><span class="line">                    print(<span class="string">"Hacked!"</span>)</span><br><span class="line">                    return d</span><br><span class="line">    return False</span><br><span class="line">d = wiener<span class="constructor">_hack(<span class="params">e</span>, <span class="params">n</span>)</span></span><br><span class="line">print(d)</span><br><span class="line">m=pow(c,d,n)</span><br><span class="line">flag=long<span class="constructor">_to_bytes(<span class="params">m</span>)</span></span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<p>flag{d3752538-90d0-c373-cfef-9247d3e16848}</p>
+<h3 id="0x03-lfsr"><a href="#0x03-lfsr" class="headerlink" title="0x03 lfsr"></a>0x03 lfsr</h3><p>第一次接触这个题，查了下发现是线性反馈移位寄存器相关，本题将flag设为mask，即要求mask，原题目如下：</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: cp936 -*-</span></span><br><span class="line">import <span class="keyword">random</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> secret import flag</span><br><span class="line"></span><br><span class="line">N = <span class="number">100</span></span><br><span class="line">MASK = <span class="number">2</span>**(N+<span class="number">1</span>) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">def lfsr(<span class="keyword">state</span>, mask):</span><br><span class="line">    feedback = <span class="keyword">state</span> &amp; mask</span><br><span class="line">    feed_bit = bin(feedback)[<span class="number">2</span>:].count(<span class="string">"1"</span>) &amp; <span class="number">1</span> </span><br><span class="line">    output_bit = <span class="keyword">state</span> &amp; <span class="number">1</span> </span><br><span class="line">    <span class="keyword">state</span> = (<span class="keyword">state</span> &gt;&gt; <span class="number">1</span>) | (feed_bit <span class="variable">&lt;&lt; (N-1)) </span></span><br><span class="line"><span class="variable">    return state, output_bit</span></span><br><span class="line"><span class="variable"></span></span><br><span class="line"><span class="variable">def main():</span></span><br><span class="line"><span class="variable">    assert flag.startswith("flag&#123;")</span></span><br><span class="line"><span class="variable">    assert flag.endswith("&#125;")</span></span><br><span class="line"><span class="variable"></span></span><br><span class="line"><span class="variable">    mask = int(flag[5:-1]) #mask flag 100位</span></span><br><span class="line"><span class="variable">    assert mask.bit_length() == N</span></span><br><span class="line"><span class="variable">    </span></span><br><span class="line"><span class="variable">    state  = random.randint(0, MASK) </span></span><br><span class="line"><span class="variable">    print(state)</span></span><br><span class="line"><span class="variable">    </span></span><br><span class="line"><span class="variable">    outputs = ''</span></span><br><span class="line"><span class="variable">    for _ in range(N**2):</span></span><br><span class="line"><span class="variable">        state, output_bit = lfsr(state, mask)</span></span><br><span class="line"><span class="variable">        outputs += str(output_bit)</span></span><br><span class="line"><span class="variable">    </span></span><br><span class="line"><span class="variable">    with open("output.txt", "w") as f:</span></span><br><span class="line"><span class="variable">        f.write(outputs)</span></span><br><span class="line"><span class="variable"></span></span><br><span class="line"><span class="variable">main()</span></span><br></pre></td></tr></table></figure>
+<p>（在师兄帮助下）找到 de1ctf 原题 <a href="https://ruanx.net/babylfsr/，只有左移和右移区别，state" target="_blank" rel="noopener">https://ruanx.net/babylfsr/，只有左移和右移区别，state</a> 需要逆序，数据取前 200 位修改脚本如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">#sage脚本</span><br><span class="line">#out &#x3D; open(&#39;output.txt&#39;,&#39;r&#39;).read()</span><br><span class="line">#f&#x3D;out[:200]</span><br><span class="line">f&#x3D;01001100111011110111110110101001110010100101000011111101101111010111100111110100100101110111001101110110011000010100100111011010001101100000111110111100000101000010010000110010110110110110011111101011</span><br><span class="line">print(f)</span><br><span class="line">s&#x3D;[int(x)for x in f]</span><br><span class="line">M &#x3D; matrix(GF(2), 100, 100)</span><br><span class="line">T &#x3D; vector(GF(2), 100)</span><br><span class="line"></span><br><span class="line">for i in range(100):</span><br><span class="line">    M[i] &#x3D; (s[i : i + 100])[::-1] #state</span><br><span class="line">    T[i] &#x3D; s[i+100]</span><br><span class="line">try:</span><br><span class="line">    mask &#x3D; M.inverse() * T</span><br><span class="line">    print(&#39;flag&#123;&#39;+str(int(&#39;&#39;.join(map(str, (mask))), base&#x3D;2))+&#39;&#125;&#39;)</span><br><span class="line">except Exception as e:</span><br><span class="line">    print(e)</span><br><span class="line">#flag&#123;856137228707110492246853478448&#125;</span><br><span class="line">#sage cell server</span><br></pre></td></tr></table></figure>
+<p>在线sage脚本 <a href="https://sagecell.sagemath.org/" target="_blank" rel="noopener">https://sagecell.sagemath.org/</a></p>
+<p>0x04 rsa<br>这道题没给什么条件，n也分解不出来…最后无解</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">n</span> = <span class="number">50142032499469550407421604706771611415193641755639270667473328045908799316205905505167271138079522738272643811917325451177986948493659090203974349370248583120022500722759239305447823602875823849366662503027591858371125301505134216095903796534740686834236150999</span></span><br><span class="line"><span class="attr">e</span> = <span class="number">65537</span></span><br><span class="line"><span class="attr">c</span> = <span class="number">45005399504992587510006608300548120810512973768886391125598523343330913326304417790989607300367232977960116381108873363343598357102136548218343380795022179607741940866191404186680657699739176842869814452906110393321567314747096161480003824583613027819960172221</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="华南赛区晋级赛"><a href="#华南赛区晋级赛" class="headerlink" title="华南赛区晋级赛"></a><strong>华南赛区晋级赛</strong></h2><p>ps.这次严格的要求需要队伍集中在统一环境，双机位监控等等，第一次这样体验回忆起宛如在家的期末考试；<br>师兄们拿了第一tql，不过自己也搞出了几题…</p>
+<h3 id="0X01-三年之期"><a href="#0X01-三年之期" class="headerlink" title="0X01 三年之期"></a>0X01 三年之期</h3><p>一道偏脑洞题，源码如下：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import time as tm</span><br><span class="line">import random as rd</span><br><span class="line">from Crypto.Util.number import str2long</span><br><span class="line">n = 20314136991489778708489418870071113306321126239354250215752297094907603867181</span><br><span class="line">rd.seed(int(tm.time()))</span><br><span class="line">e = rd.randint(12450, 1145141919810)</span><br><span class="line">with open(<span class="emphasis">'flag.txt'</span>) as r:</span><br><span class="line"><span class="code">    flag = r.readline()</span></span><br><span class="line">c = pow(str2long(flag), e, n)</span><br><span class="line">print(c)</span><br><span class="line">'''</span><br><span class="line">c = 9677463901939068132601817954384243432821268637875771855241656639633275682765</span><br><span class="line">'''</span><br></pre></td></tr></table></figure>
+<p>开始研究了下，思路还算清晰，通过tm.time()函数获取了种子值，然后e其实就定了，即可求解；<br>一开始没懂time()函数的原理，通过给的附件提示就乱猜了下种子值，后来发现是根据本地时间获得值,具体解释是：</p>
+<blockquote>
+<p>time() 是指返回自 Unix 纪元（January 1 1970 00:00:00 GMT）起的当前时间的秒数的函数，主要用来获取当前的系统时间。</p>
+</blockquote>
+<p>于是反应过来附件提示是给出了一个时间点：2020年5月27日下午3时4分有余；因而修改系统时间，获取该时间点附近的种子值求得e值，脚本如下：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time as tm</span><br><span class="line"><span class="keyword">import</span> random as rd</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> *</span><br><span class="line">n = <span class="number">20314136991489778708489418870071113306321126239354250215752297094907603867181</span></span><br><span class="line">c = <span class="number">9677463901939068132601817954384243432821268637875771855241656639633275682765</span></span><br><span class="line">p = <span class="number">91878423570644433705107636207019552241</span></span><br><span class="line">q = <span class="number">221098014115037952387250830957848633341</span></span><br><span class="line">phi =(p<span class="number">-1</span>)*(q<span class="number">-1</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1590563000</span>,<span class="number">1590563100</span>):</span><br><span class="line">    rd.seed(i)</span><br><span class="line">    e = rd.randint(<span class="number">12450</span>, <span class="number">1145141919810</span>)</span><br><span class="line">    #e=<span class="number">1142573861267</span></span><br><span class="line">    <span class="keyword">if</span>(gcd(e,phi)==<span class="number">1</span>):</span><br><span class="line">        d = invert(e,phi)</span><br><span class="line">        m = pow(c,d,n)</span><br><span class="line">        flag=long_to_bytes(m)</span><br><span class="line">        <span class="keyword">if</span>(flag[:<span class="number">4</span>]==<span class="string">'flag'</span>):</span><br><span class="line">            print(<span class="string">"i="</span>+str(i))</span><br><span class="line">            print(<span class="string">"e="</span>+str(e))</span><br><span class="line">            print(long_to_bytes(m))</span><br></pre></td></tr></table></figure>
+<p>flag{fake_crypto_real_time}</p>
+<h3 id="0x02-paillier"><a href="#0x02-paillier" class="headerlink" title="0x02 paillier"></a>0x02 paillier</h3><p>通过题目描述可以获得提示，是同态加密相关,首先分解n获得p,q，再写解密脚本获得flag (其实是DASCTF原题<br><a href="https://www.anquanke.com/post/id/204720" target="_blank" rel="noopener">https://www.anquanke.com/post/id/204720</a> 这个写的挺好的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line">c=<span class="number">3808740243451829078210724960912929301578515217667342177748504822876637487457955515274108053834689975926677363518389793704175328503134131135222019673109070160582400165248020145405704970220361687652902588280756668081550609197401147259204898810928417434170277979905559815094009996366760441244275219995751156342</span></span><br><span class="line">n=<span class="number">10999687930887680707038926445934606154952916940968581490041059775550485116500433363190163190149269018664612556276327671880157597616757778207737495630969441</span></span><br><span class="line">p=<span class="number">104879397075344024438671231239628115011303349344697797964879592144922079001013</span></span><br><span class="line">q=<span class="number">104879397075344024438671231239628115011303349344697797964879592144922079000957</span></span><br><span class="line">phi=(p<span class="number">-1</span>)*(q<span class="number">-1</span>)</span><br><span class="line">print(p*q==n)</span><br><span class="line">tmp=inverse(phi,n*n)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">L</span><span class="params">(x,n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (x<span class="number">-1</span>)/n</span><br><span class="line">m=(L(pow(c,phi,n**<span class="number">2</span>),n)*tmp)% n</span><br><span class="line">flag=long_to_bytes(m)</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<p>flag{p4ill1er_1s_simp13_6ut_fun0y}</p>
+<h3 id="0x03-easyRSA2"><a href="#0x03-easyRSA2" class="headerlink" title="0x03 easyRSA2"></a>0x03 easyRSA2</h3><p>通过观察发现R值在一定范围内随机生成且有限定条件，通过脚本爆破出R值再生成p,q满足p*q==N即可（爆破需要点技巧，也有点运气）</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">from</span> <span class="string">Crypto.Util.number import *</span></span><br><span class="line"><span class="attr">from</span> <span class="string">gmpy2 import *</span></span><br><span class="line"><span class="attr">from</span> <span class="string">random import randint</span></span><br><span class="line"><span class="attr">def</span> <span class="string">lfsr(R, mask):</span></span><br><span class="line">    <span class="attr">out</span> = <span class="string">(R &lt;&lt; 1) &amp; 0xffffff</span></span><br><span class="line">    <span class="attr">bit</span> = <span class="string">(R &amp; mask) &amp; 0xffffff</span></span><br><span class="line">    <span class="attr">out_bit</span> = <span class="string">0</span></span><br><span class="line">    <span class="attr">while</span> <span class="string">bit != 0:</span></span><br><span class="line">        <span class="attr">out_bit</span> <span class="string">^= (bit &amp; 1)</span></span><br><span class="line">        <span class="attr">bit</span> = <span class="string">bit &gt;&gt; 1</span></span><br><span class="line">    <span class="attr">out</span> <span class="string">^= out_bit</span></span><br><span class="line">    <span class="attr">return</span> <span class="string">out, out_bit</span></span><br><span class="line"><span class="attr">def</span> <span class="string">genPrime(R, mask, bit):</span></span><br><span class="line">    <span class="attr">count</span> = <span class="string">0</span></span><br><span class="line">    <span class="attr">while</span> <span class="string">True:</span></span><br><span class="line">        <span class="attr">prime</span> = <span class="string">0</span></span><br><span class="line">        <span class="attr">for</span> <span class="string">i in range(bit):</span></span><br><span class="line">            <span class="meta">(R,</span> <span class="string">out) = lfsr(R, mask)</span></span><br><span class="line">            <span class="attr">prime</span> = <span class="string">(prime &lt;&lt; 1) ^ out</span></span><br><span class="line">        <span class="attr">if</span> <span class="string">isPrime(prime):</span></span><br><span class="line">            <span class="attr">yield</span> <span class="string">prime</span></span><br><span class="line"><span class="attr">c</span> = <span class="string">6684964915220118582967779339778281191480721331277264008727956905412522191891577318496811103479236535162902002849402158576209369365216871215970298759907612506858782907695363640961486949954737422674241319324005824608432362870601503195732749418913837430005734723713418265367674478034958636210553558710255343852430555289083769122915746460520527901281000640322695067600645854331373546357250717419234641975207055438310902263460786023264083276241993777033019403958870974651300443284267874897661821470295678104777173473067115481628462826806003468946251426791453198705124293359121586511241439875401814776017696707984182021387</span></span><br><span class="line"><span class="attr">N</span> = <span class="string">20810957009276106793407213910378661196121487687823746048122155641218542460826730219110656287101260168946938791461059505814922118515467109509837349680754090608255504526134410351463656255691783971444571054522453022800126929469043167030391678846170049623981035076358138786501749472609158363456145355371459844126461090570363853528625626105278328302124774326540071764723428549101629873760220706844175555426584061941559726039964237456357385035695064652549354921445248608377193556548812135468913090861015290434175512233678163185595303365514323264097974212600785941588676627766702571648150080528511340232845880170920561238451</span></span><br><span class="line"><span class="attr">e</span> = <span class="string">16069787</span></span><br><span class="line"><span class="attr">mask</span> = <span class="string">0b101011000100100100000100 </span></span><br><span class="line"><span class="attr">'''</span></span><br><span class="line"><span class="attr">for</span> <span class="string">R in range(0x80dfee, 0xffffff):#(0xb00000, 0xdddddd)</span></span><br><span class="line">    <span class="meta">if(R.bit_length()</span> =<span class="string">= 24):</span></span><br><span class="line">        <span class="attr">generator_24</span> = <span class="string">genPrime(R, mask, 24)</span></span><br><span class="line">        <span class="attr">e1</span> = <span class="string">generator_24.next()</span></span><br><span class="line">        <span class="meta">if(e1</span>=<span class="string">=e):</span></span><br><span class="line">            <span class="meta">print("R</span>=<span class="string">",R)</span></span><br><span class="line"><span class="attr">'''</span></span><br><span class="line"><span class="attr">R</span>=<span class="string">12045632</span></span><br><span class="line"><span class="comment">#print(hex(R))</span></span><br><span class="line"><span class="attr">generator_24</span> = <span class="string">genPrime(R, mask, 24)</span></span><br><span class="line"><span class="attr">e1</span> = <span class="string">generator_24.next()</span></span><br><span class="line"><span class="comment">#print(e1==e)</span></span><br><span class="line"><span class="attr">generator_1024</span> = <span class="string">genPrime(R, mask, 1024)</span></span><br><span class="line"><span class="attr">p</span> = <span class="string">generator_1024.next()</span></span><br><span class="line"><span class="attr">q</span> = <span class="string">generator_1024.next()</span></span><br><span class="line"><span class="attr">assert</span> <span class="string">N==p*q</span></span><br><span class="line"><span class="attr">phi</span> = <span class="string">(p - 1) * (q - 1)</span></span><br><span class="line"><span class="attr">d</span> = <span class="string">inverse(e, phi)</span></span><br><span class="line"><span class="attr">m</span>=<span class="string">pow(c,d,N)</span></span><br><span class="line"><span class="attr">flag</span>=<span class="string">long_to_bytes(m)</span></span><br><span class="line"><span class="attr">print(flag)</span></span><br></pre></td></tr></table></figure>
+<p>flag{cf51fa40dbe7cb83b5169f3313a4ea7e}</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Crypto/" rel="tag"># Crypto</a>
+          
+            <a href="/tags/MISC/" rel="tag"># MISC</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/17/XCTF-Exercise%20area/" rel="next" title="XCTF-Exercise area">
+                <i class="fa fa-chevron-left"></i> XCTF-Exercise area
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">JSW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面：菜鸡记录下自己做出来的几道题"><span class="nav-number">1.</span> <span class="nav-text">写在前面：菜鸡记录下自己做出来的几道题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初赛"><span class="nav-number">1.1.</span> <span class="nav-text">初赛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x01-ctf-game"><span class="nav-number">1.1.1.</span> <span class="nav-text">0x01 ctf_game</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02-bd"><span class="nav-number">1.1.2.</span> <span class="nav-text">0x02 bd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x03-lfsr"><span class="nav-number">1.1.3.</span> <span class="nav-text">0x03 lfsr</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#华南赛区晋级赛"><span class="nav-number">1.2.</span> <span class="nav-text">华南赛区晋级赛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0X01-三年之期"><span class="nav-number">1.2.1.</span> <span class="nav-text">0X01 三年之期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02-paillier"><span class="nav-number">1.2.2.</span> <span class="nav-text">0x02 paillier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x03-easyRSA2"><span class="nav-number">1.2.3.</span> <span class="nav-text">0x03 easyRSA2</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JSW</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
